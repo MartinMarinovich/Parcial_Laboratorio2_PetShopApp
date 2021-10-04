@@ -6,6 +6,7 @@ namespace PetShopForms
 {
     public partial class FrmLogin : Form
     {
+        /// Formlogin
         FrmVentas formVentas;
         Usuario aux;
         public FrmLogin()
