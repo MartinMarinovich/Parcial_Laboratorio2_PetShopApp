@@ -154,14 +154,14 @@ namespace Entidades
         /// <summary>
         /// Firma del metodo que va a ser heredado por las clases hijas para mostrar los datos
         /// </summary>
-        /// <returns></returns>
+        /// <returns>String de datos</returns>
         public abstract string Datos();
 
         public string DatosLogin()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"{ this.Nombre}     {this.Apellido}");
-            return sb.ToString();
+            sb.AppendFormat("{0}",this.Nombre);
+            return sb.ToString(); 
 
         }
         

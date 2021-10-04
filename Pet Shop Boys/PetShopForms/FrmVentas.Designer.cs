@@ -507,7 +507,6 @@ namespace PetShopForms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtb_Apellido;
-        private System.Windows.Forms.Button btn_RealizarVenta;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListBox lstb_Productos;
         private System.Windows.Forms.ListBox lstb_Clientes;

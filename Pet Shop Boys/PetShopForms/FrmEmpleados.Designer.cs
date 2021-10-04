@@ -440,7 +440,6 @@ namespace PetShopForms
         #endregion
 
         private System.Windows.Forms.Label lblEmpleados;
-        private System.Windows.Forms.Button btn_ModificarEmp;
         private System.Windows.Forms.ListBox lstb_Nomina;
         private System.Windows.Forms.TextBox txtb_SueldoModif;
         private System.Windows.Forms.TextBox txtb_ApellidoModif;
