@@ -60,8 +60,7 @@ namespace PetShopForms
         {
             int auxCant = 0;
             float auxMonto = 0;
-            int flag = 0;
-            Compra compraAux;
+            
             if (pedidoTerminado == true)
             {
                 listaAux = new List<Producto>();
@@ -118,9 +117,8 @@ namespace PetShopForms
 
             foreach (Compra item in Local.Ventas)
             {
-               // lstb_HistorialVentas.Items.Add(item.Datos());
-                lstb_HistorialVentas.Items.Add(item.MostrarCarrito());
-
+              lstb_HistorialVentas.Items.Add(item.Datos());
+ 
             }
         }
 
@@ -153,6 +151,12 @@ namespace PetShopForms
             }
         }
 
-        
+        private void FrmVentas_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show($"Desea salir?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

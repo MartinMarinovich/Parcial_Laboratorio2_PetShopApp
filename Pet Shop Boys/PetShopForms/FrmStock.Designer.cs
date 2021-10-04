@@ -316,6 +316,7 @@ namespace PetShopForms
             this.Name = "FrmStock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmStock";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmStock_FormClosing);
             this.Load += new System.EventHandler(this.FrmStock_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -47,7 +47,7 @@ namespace PetShopForms
             // 
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblLogin.Location = new System.Drawing.Point(12, 9);
+            this.lblLogin.Location = new System.Drawing.Point(-2, 9);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(377, 54);
             this.lblLogin.TabIndex = 0;
@@ -56,26 +56,28 @@ namespace PetShopForms
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(12, 137);
+            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblUsuario.Location = new System.Drawing.Point(43, 134);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(47, 15);
+            this.lblUsuario.Size = new System.Drawing.Size(63, 20);
             this.lblUsuario.TabIndex = 1;
             this.lblUsuario.Text = "Usuario";
             // 
             // lblContraseña
             // 
             this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Location = new System.Drawing.Point(12, 219);
+            this.lblContraseña.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblContraseña.Location = new System.Drawing.Point(18, 210);
             this.lblContraseña.Name = "lblContraseña";
-            this.lblContraseña.Size = new System.Drawing.Size(67, 15);
+            this.lblContraseña.Size = new System.Drawing.Size(88, 20);
             this.lblContraseña.TabIndex = 2;
             this.lblContraseña.Text = "Contraseña";
             // 
             // btnLogInAdministrativo
             // 
-            this.btnLogInAdministrativo.Location = new System.Drawing.Point(108, 292);
+            this.btnLogInAdministrativo.Location = new System.Drawing.Point(127, 266);
             this.btnLogInAdministrativo.Name = "btnLogInAdministrativo";
-            this.btnLogInAdministrativo.Size = new System.Drawing.Size(166, 43);
+            this.btnLogInAdministrativo.Size = new System.Drawing.Size(152, 36);
             this.btnLogInAdministrativo.TabIndex = 4;
             this.btnLogInAdministrativo.Text = "Ingresar";
             this.btnLogInAdministrativo.UseVisualStyleBackColor = true;
@@ -83,7 +85,7 @@ namespace PetShopForms
             // 
             // txtb_Usuario
             // 
-            this.txtb_Usuario.Location = new System.Drawing.Point(122, 134);
+            this.txtb_Usuario.Location = new System.Drawing.Point(128, 134);
             this.txtb_Usuario.Name = "txtb_Usuario";
             this.txtb_Usuario.PlaceholderText = "Ingresar usuario";
             this.txtb_Usuario.Size = new System.Drawing.Size(152, 23);
@@ -91,7 +93,7 @@ namespace PetShopForms
             // 
             // txtb_Contraseña
             // 
-            this.txtb_Contraseña.Location = new System.Drawing.Point(122, 211);
+            this.txtb_Contraseña.Location = new System.Drawing.Point(128, 211);
             this.txtb_Contraseña.Name = "txtb_Contraseña";
             this.txtb_Contraseña.PasswordChar = '*';
             this.txtb_Contraseña.PlaceholderText = "Ingresar contraseña";
@@ -101,7 +103,7 @@ namespace PetShopForms
             // lblNomina
             // 
             this.lblNomina.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblNomina.Location = new System.Drawing.Point(566, 36);
+            this.lblNomina.Location = new System.Drawing.Point(780, 67);
             this.lblNomina.Name = "lblNomina";
             this.lblNomina.Size = new System.Drawing.Size(134, 27);
             this.lblNomina.TabIndex = 11;
@@ -110,17 +112,17 @@ namespace PetShopForms
             // lstView_Nomina
             // 
             this.lstView_Nomina.HideSelection = false;
-            this.lstView_Nomina.Location = new System.Drawing.Point(322, 90);
+            this.lstView_Nomina.Location = new System.Drawing.Point(334, 97);
             this.lstView_Nomina.Name = "lstView_Nomina";
-            this.lstView_Nomina.Size = new System.Drawing.Size(606, 387);
+            this.lstView_Nomina.Size = new System.Drawing.Size(620, 356);
             this.lstView_Nomina.TabIndex = 12;
             this.lstView_Nomina.UseCompatibleStateImageBehavior = false;
             // 
             // btn_CompletarComoEmpleado
             // 
-            this.btn_CompletarComoEmpleado.Location = new System.Drawing.Point(108, 372);
+            this.btn_CompletarComoEmpleado.Location = new System.Drawing.Point(128, 332);
             this.btn_CompletarComoEmpleado.Name = "btn_CompletarComoEmpleado";
-            this.btn_CompletarComoEmpleado.Size = new System.Drawing.Size(166, 30);
+            this.btn_CompletarComoEmpleado.Size = new System.Drawing.Size(152, 34);
             this.btn_CompletarComoEmpleado.TabIndex = 13;
             this.btn_CompletarComoEmpleado.Text = "Ingresar como empleado";
             this.btn_CompletarComoEmpleado.UseVisualStyleBackColor = true;
@@ -128,9 +130,9 @@ namespace PetShopForms
             // 
             // btn_CompletarComoAdmin
             // 
-            this.btn_CompletarComoAdmin.Location = new System.Drawing.Point(108, 424);
+            this.btn_CompletarComoAdmin.Location = new System.Drawing.Point(128, 384);
             this.btn_CompletarComoAdmin.Name = "btn_CompletarComoAdmin";
-            this.btn_CompletarComoAdmin.Size = new System.Drawing.Size(165, 30);
+            this.btn_CompletarComoAdmin.Size = new System.Drawing.Size(151, 34);
             this.btn_CompletarComoAdmin.TabIndex = 14;
             this.btn_CompletarComoAdmin.Text = "Ingresar como Admin";
             this.btn_CompletarComoAdmin.UseVisualStyleBackColor = true;
@@ -141,7 +143,7 @@ namespace PetShopForms
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(936, 482);
+            this.ClientSize = new System.Drawing.Size(1034, 497);
             this.Controls.Add(this.btn_CompletarComoAdmin);
             this.Controls.Add(this.btn_CompletarComoEmpleado);
             this.Controls.Add(this.lstView_Nomina);
@@ -154,9 +156,11 @@ namespace PetShopForms
             this.Controls.Add(this.lblLogin);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pet Shop Boys ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmLogin_FormClosing);
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

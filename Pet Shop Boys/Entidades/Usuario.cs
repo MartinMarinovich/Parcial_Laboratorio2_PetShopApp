@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 
 namespace Entidades
 {
@@ -150,21 +151,30 @@ namespace Entidades
             }
         }
 
-      /*  public static Empleado operator ==(Usuario user1, Usuario user2)
-        {
-            return user1 == user2;
-        }
+        /*  public static Empleado operator ==(Usuario user1, Usuario user2)
+          {
+              return user1 == user2;
+          }
 
-        public static Empleado operator !=(Usuario user1, Usuario user2)
-        {
-            return  user1 != user2; ;
-        }*/
+          public static Empleado operator !=(Usuario user1, Usuario user2)
+          {
+              return  user1 != user2; ;
+          }*/
 
         /// <summary>
         /// Firma del metodo que va a ser heredado por las clases hijas para mostrar los datos
         /// </summary>
         /// <returns></returns>
         public abstract string Datos();
+
+        public string DatosLogin()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"{ this.Nombre}     {this.Apellido}");
+            return sb.ToString();
+
+        }
+        
       
     }
 }

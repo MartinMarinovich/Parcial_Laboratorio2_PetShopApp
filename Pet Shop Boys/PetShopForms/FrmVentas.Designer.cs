@@ -54,21 +54,31 @@ namespace PetShopForms
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.grpBox = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.grpBox.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblVentas
             // 
             this.lblVentas.Font = new System.Drawing.Font("Arial Black", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblVentas.Location = new System.Drawing.Point(536, 159);
+            this.lblVentas.Location = new System.Drawing.Point(536, 164);
             this.lblVentas.Name = "lblVentas";
-            this.lblVentas.Size = new System.Drawing.Size(231, 41);
+            this.lblVentas.Size = new System.Drawing.Size(214, 33);
             this.lblVentas.TabIndex = 2;
             this.lblVentas.Text = "Historico de Ventas";
             // 
             // lblProduct
             // 
             this.lblProduct.Font = new System.Drawing.Font("Arial Black", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblProduct.Location = new System.Drawing.Point(-2, 347);
+            this.lblProduct.Location = new System.Drawing.Point(-2, 356);
             this.lblProduct.Name = "lblProduct";
             this.lblProduct.Size = new System.Drawing.Size(231, 23);
             this.lblProduct.TabIndex = 3;
@@ -78,14 +88,14 @@ namespace PetShopForms
             // 
             this.lstb_HistorialVentas.FormattingEnabled = true;
             this.lstb_HistorialVentas.ItemHeight = 15;
-            this.lstb_HistorialVentas.Location = new System.Drawing.Point(536, 211);
+            this.lstb_HistorialVentas.Location = new System.Drawing.Point(536, 216);
             this.lstb_HistorialVentas.Name = "lstb_HistorialVentas";
-            this.lstb_HistorialVentas.Size = new System.Drawing.Size(546, 409);
+            this.lstb_HistorialVentas.Size = new System.Drawing.Size(616, 409);
             this.lstb_HistorialVentas.TabIndex = 4;
             // 
             // txtb_Nombre
             // 
-            this.txtb_Nombre.Location = new System.Drawing.Point(333, 75);
+            this.txtb_Nombre.Location = new System.Drawing.Point(6, 65);
             this.txtb_Nombre.Name = "txtb_Nombre";
             this.txtb_Nombre.PlaceholderText = "Ingrese nombre del cliente";
             this.txtb_Nombre.Size = new System.Drawing.Size(164, 23);
@@ -93,10 +103,10 @@ namespace PetShopForms
             // 
             // txt_CantidadDeProducto
             // 
-            this.txt_CantidadDeProducto.Location = new System.Drawing.Point(12, 197);
+            this.txt_CantidadDeProducto.Location = new System.Drawing.Point(6, 74);
             this.txt_CantidadDeProducto.Name = "txt_CantidadDeProducto";
             this.txt_CantidadDeProducto.PlaceholderText = "Ingrese cantidad de producto";
-            this.txt_CantidadDeProducto.Size = new System.Drawing.Size(164, 23);
+            this.txt_CantidadDeProducto.Size = new System.Drawing.Size(181, 23);
             this.txt_CantidadDeProducto.TabIndex = 6;
             // 
             // lblTitulo
@@ -111,16 +121,16 @@ namespace PetShopForms
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 148);
+            this.label1.Location = new System.Drawing.Point(6, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 23);
+            this.label1.Size = new System.Drawing.Size(106, 18);
             this.label1.TabIndex = 8;
             this.label1.Text = "Cantidad";
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(333, 38);
+            this.label2.Location = new System.Drawing.Point(6, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(164, 23);
             this.label2.TabIndex = 9;
@@ -129,7 +139,7 @@ namespace PetShopForms
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(333, 113);
+            this.label3.Location = new System.Drawing.Point(6, 102);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(164, 23);
             this.label3.TabIndex = 11;
@@ -137,7 +147,7 @@ namespace PetShopForms
             // 
             // txtb_Apellido
             // 
-            this.txtb_Apellido.Location = new System.Drawing.Point(333, 159);
+            this.txtb_Apellido.Location = new System.Drawing.Point(6, 135);
             this.txtb_Apellido.Name = "txtb_Apellido";
             this.txtb_Apellido.PlaceholderText = "Ingrese apellido del cliente";
             this.txtb_Apellido.Size = new System.Drawing.Size(164, 23);
@@ -145,9 +155,9 @@ namespace PetShopForms
             // 
             // btn_AgregarProducto
             // 
-            this.btn_AgregarProducto.Location = new System.Drawing.Point(12, 240);
+            this.btn_AgregarProducto.Location = new System.Drawing.Point(6, 120);
             this.btn_AgregarProducto.Name = "btn_AgregarProducto";
-            this.btn_AgregarProducto.Size = new System.Drawing.Size(164, 38);
+            this.btn_AgregarProducto.Size = new System.Drawing.Size(181, 37);
             this.btn_AgregarProducto.TabIndex = 12;
             this.btn_AgregarProducto.Text = "Agregar Producto";
             this.btn_AgregarProducto.UseVisualStyleBackColor = true;
@@ -155,14 +165,14 @@ namespace PetShopForms
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label4.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(235, 347);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(312, 356);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(163, 23);
             this.label4.TabIndex = 13;
-            this.label4.Text = "Seleccione el producto";
+            this.label4.Text = "Clickee el producto";
             // 
             // lstb_Productos
             // 
@@ -177,15 +187,15 @@ namespace PetShopForms
             // 
             this.lstb_Clientes.FormattingEnabled = true;
             this.lstb_Clientes.ItemHeight = 15;
-            this.lstb_Clientes.Location = new System.Drawing.Point(536, 38);
+            this.lstb_Clientes.Location = new System.Drawing.Point(775, 56);
             this.lstb_Clientes.Name = "lstb_Clientes";
-            this.lstb_Clientes.Size = new System.Drawing.Size(307, 109);
+            this.lstb_Clientes.Size = new System.Drawing.Size(307, 124);
             this.lstb_Clientes.TabIndex = 15;
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(333, 197);
+            this.label5.Location = new System.Drawing.Point(6, 176);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(106, 23);
             this.label5.TabIndex = 17;
@@ -193,17 +203,17 @@ namespace PetShopForms
             // 
             // txtb_Dni
             // 
-            this.txtb_Dni.Location = new System.Drawing.Point(333, 229);
+            this.txtb_Dni.Location = new System.Drawing.Point(6, 214);
             this.txtb_Dni.Name = "txtb_Dni";
             this.txtb_Dni.PlaceholderText = "Ingrese cantidad de producto";
-            this.txtb_Dni.Size = new System.Drawing.Size(164, 23);
+            this.txtb_Dni.Size = new System.Drawing.Size(181, 23);
             this.txtb_Dni.TabIndex = 16;
             // 
             // btn_AltaCliente
             // 
-            this.btn_AltaCliente.Location = new System.Drawing.Point(333, 291);
+            this.btn_AltaCliente.Location = new System.Drawing.Point(6, 243);
             this.btn_AltaCliente.Name = "btn_AltaCliente";
-            this.btn_AltaCliente.Size = new System.Drawing.Size(164, 38);
+            this.btn_AltaCliente.Size = new System.Drawing.Size(181, 38);
             this.btn_AltaCliente.TabIndex = 18;
             this.btn_AltaCliente.Text = "Nuevo Cliente";
             this.btn_AltaCliente.UseVisualStyleBackColor = true;
@@ -215,15 +225,15 @@ namespace PetShopForms
             this.lbl_Errores.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Errores.Location = new System.Drawing.Point(12, 39);
             this.lbl_Errores.Name = "lbl_Errores";
-            this.lbl_Errores.Size = new System.Drawing.Size(187, 79);
+            this.lbl_Errores.Size = new System.Drawing.Size(187, 61);
             this.lbl_Errores.TabIndex = 19;
             this.lbl_Errores.Text = "Complete los campos correctamente para dar de alta un cliente";
             // 
             // btn_FinalizarVenta
             // 
-            this.btn_FinalizarVenta.Location = new System.Drawing.Point(12, 291);
+            this.btn_FinalizarVenta.Location = new System.Drawing.Point(6, 172);
             this.btn_FinalizarVenta.Name = "btn_FinalizarVenta";
-            this.btn_FinalizarVenta.Size = new System.Drawing.Size(164, 38);
+            this.btn_FinalizarVenta.Size = new System.Drawing.Size(181, 36);
             this.btn_FinalizarVenta.TabIndex = 20;
             this.btn_FinalizarVenta.Text = "Finalizar Pedido";
             this.btn_FinalizarVenta.UseVisualStyleBackColor = true;
@@ -255,7 +265,7 @@ namespace PetShopForms
             // 
             // label10
             // 
-            this.label10.Location = new System.Drawing.Point(87, 392);
+            this.label10.Location = new System.Drawing.Point(79, 392);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(54, 16);
             this.label10.TabIndex = 25;
@@ -269,45 +279,132 @@ namespace PetShopForms
             this.label11.TabIndex = 26;
             this.label11.Text = "Precio";
             // 
+            // grpBox
+            // 
+            this.grpBox.Controls.Add(this.txtb_Nombre);
+            this.grpBox.Controls.Add(this.label2);
+            this.grpBox.Controls.Add(this.txtb_Apellido);
+            this.grpBox.Controls.Add(this.txtb_Dni);
+            this.grpBox.Controls.Add(this.label3);
+            this.grpBox.Controls.Add(this.label5);
+            this.grpBox.Controls.Add(this.btn_AltaCliente);
+            this.grpBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.grpBox.Location = new System.Drawing.Point(286, 29);
+            this.grpBox.Name = "grpBox";
+            this.grpBox.Size = new System.Drawing.Size(200, 310);
+            this.grpBox.TabIndex = 27;
+            this.grpBox.TabStop = false;
+            this.grpBox.Text = "ALTAS";
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(775, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(106, 18);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Clientes";
+            // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(851, 37);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(54, 16);
+            this.label12.TabIndex = 31;
+            this.label12.Text = "Apellido";
+            // 
+            // label13
+            // 
+            this.label13.Location = new System.Drawing.Point(1004, 37);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(70, 16);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Dinero";
+            // 
+            // label14
+            // 
+            this.label14.Location = new System.Drawing.Point(777, 37);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(51, 16);
+            this.label14.TabIndex = 29;
+            this.label14.Text = "Nombre";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txt_CantidadDeProducto);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.btn_FinalizarVenta);
+            this.groupBox1.Controls.Add(this.btn_AgregarProducto);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox1.Location = new System.Drawing.Point(12, 114);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(199, 225);
+            this.groupBox1.TabIndex = 32;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "PEDIDOS";
+            // 
+            // label15
+            // 
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.Location = new System.Drawing.Point(911, 2);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(146, 23);
+            this.label15.TabIndex = 33;
+            this.label15.Text = "Clickee el empleado";
+            // 
+            // label16
+            // 
+            this.label16.Location = new System.Drawing.Point(911, 37);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(61, 16);
+            this.label16.TabIndex = 34;
+            this.label16.Text = "DNI";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // FrmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(1086, 623);
+            this.ClientSize = new System.Drawing.Size(1153, 623);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.grpBox);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.btn_FinalizarVenta);
             this.Controls.Add(this.lbl_Errores);
-            this.Controls.Add(this.btn_AltaCliente);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtb_Dni);
             this.Controls.Add(this.lstb_Clientes);
             this.Controls.Add(this.lstb_Productos);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.btn_AgregarProducto);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtb_Apellido);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTitulo);
-            this.Controls.Add(this.txt_CantidadDeProducto);
-            this.Controls.Add(this.txtb_Nombre);
             this.Controls.Add(this.lstb_HistorialVentas);
             this.Controls.Add(this.lblProduct);
             this.Controls.Add(this.lblVentas);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmVentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmVentas";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmVentas_FormClosing);
             this.Load += new System.EventHandler(this.FrmVentas_Load);
+            this.grpBox.ResumeLayout(false);
+            this.grpBox.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -337,5 +434,13 @@ namespace PetShopForms
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.GroupBox grpBox;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
     }
 }

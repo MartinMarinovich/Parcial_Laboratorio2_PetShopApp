@@ -153,5 +153,13 @@ namespace PetShopForms
             }
 
         }
+
+        private void FrmStock_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show($"Desea salir?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

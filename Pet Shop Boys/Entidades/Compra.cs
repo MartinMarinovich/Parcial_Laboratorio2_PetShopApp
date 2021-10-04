@@ -111,12 +111,15 @@ namespace Entidades
         /// Metodo protegido de la clase compra que retorna los datos que conforman a la compra
         /// </summary>
         /// <returns>Los datos de la clase compra coomo string</returns>
-        protected string Datos()
+        public string Datos()
         {
             
             StringBuilder sb = new StringBuilder();
-            StringBuilder stringBuilder = sb.AppendLine($"{this.Codigo.ToString()}     {this.Monto.ToString()}        {this.Comprador.Datos()}.");
- 
+            sb.AppendFormat("{0,-12}{1,8}     {2,12}\n", this.Codigo.ToString(),this.Monto.ToString(),this.Comprador.Datos());
+            sb.AppendLine("");
+            sb.AppendLine($"\n{MostrarCarrito()}");
+            
+
             return sb.ToString();
 
         }
@@ -131,7 +134,7 @@ namespace Entidades
 
             foreach (Producto item in this.Carrito)
             {
-                sb.AppendLine($"{ item.Tipo} { item.Descripcion}{ item.Precio}");
+                sb.AppendFormat("       {0}       {1}       {2}", item.Tipo, item.Descripcion, item.Precio);
             }
 
             return sb.ToString();

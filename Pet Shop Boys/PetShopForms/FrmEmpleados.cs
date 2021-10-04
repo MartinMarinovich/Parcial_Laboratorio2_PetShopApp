@@ -78,7 +78,6 @@ namespace PetShopForms
                 Local.Nomina.RemoveAt(indice);
                 Empleado.MoficarEmpleado(auxEmp, txtb_NombreModif.Text, txtb_ApellidoModif.Text, double.Parse(txtb_DniModif.Text), float.Parse(txtb_SueldoModif.Text));
                 Local.Nomina.Insert(indice, auxEmp);
-                //lstb_Nomina.Items.Insert(indice, auxEmp);
                 ActualizarNominaLstbx();
             }
             else
@@ -155,5 +154,12 @@ namespace PetShopForms
             }
         }
 
+        private void FrmEmpleados_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show($"Desea salir?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

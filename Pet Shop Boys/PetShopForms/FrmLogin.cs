@@ -24,10 +24,10 @@ namespace PetShopForms
             {
                 if (typeof(Empleado) == item.GetType())
                 {
-                    lstView_Nomina.Items.Add(new ListViewItem(item.Datos(), Emps));
+                    lstView_Nomina.Items.Add(new ListViewItem(item.DatosLogin(),Emps));
                 }else
                 {
-                    lstView_Nomina.Items.Add(new ListViewItem(item.Datos(), Admins));
+                    lstView_Nomina.Items.Add(new ListViewItem(item.DatosLogin(), Admins));
                 }
                 
             }
@@ -81,6 +81,14 @@ namespace PetShopForms
 
             txtb_Usuario.Text = "Sudo";
             txtb_Contraseña.Text = "Suuu";
+        }
+
+        private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show($"Desea salir?","Confirmar", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }
