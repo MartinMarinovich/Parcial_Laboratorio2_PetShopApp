@@ -151,16 +151,6 @@ namespace Entidades
             }
         }
 
-        /*  public static Empleado operator ==(Usuario user1, Usuario user2)
-          {
-              return user1 == user2;
-          }
-
-          public static Empleado operator !=(Usuario user1, Usuario user2)
-          {
-              return  user1 != user2; ;
-          }*/
-
         /// <summary>
         /// Firma del metodo que va a ser heredado por las clases hijas para mostrar los datos
         /// </summary>

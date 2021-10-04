@@ -115,7 +115,7 @@ namespace Entidades
         {
             
             StringBuilder sb = new StringBuilder();
-            sb.AppendFormat("{0,-12}{1,8}     {2,12}\n", this.Codigo.ToString(),this.Monto.ToString(),this.Comprador.Datos());
+            sb.AppendFormat("{0,-12} {1,8}     {2,12}\n", this.Codigo.ToString(),this.Monto.ToString(),this.Comprador.Datos());
             sb.AppendLine("");
             sb.AppendLine($"\n{MostrarCarrito()}");
             

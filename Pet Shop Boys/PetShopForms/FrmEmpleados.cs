@@ -48,8 +48,7 @@ namespace PetShopForms
             {
                 MessageBox.Show("Error, debe completar los campos para cargar un empleado");
             }
-
-
+            LimpiarCampos();
 
         }
 
@@ -82,8 +81,10 @@ namespace PetShopForms
             }
             else
             {
+
                 MessageBox.Show("Error, debe completar los campos para modificar un empleado");
             }
+            LimpiarCampos();
 
         }
 
@@ -121,16 +122,18 @@ namespace PetShopForms
 
                 if (indice == -1)
                 {
+
                     MessageBox.Show("No existe un empleado con esa ID");
                 }
                 else
                 {
                     Local.Nomina.RemoveAt(indice);
                     txtb_IdBaja.Text = string.Empty;
+                    
                     ActualizarNominaLstbx();    
                 }
 
-
+                LimpiarCampos();
             }
             else
             {
@@ -161,5 +164,23 @@ namespace PetShopForms
                 e.Cancel = true;
             }
         }
+
+        private void LimpiarCampos()
+        {
+            txb_Usuario.Text = string.Empty;
+            txtb_ApellidoALta.Text = string.Empty;
+            txtb_ApellidoModif.Text = string.Empty;
+            txtb_Contraseña.Text = string.Empty;
+            txb_Usuario.Text = string.Empty;
+            txtb_NombreAlta.Text = string.Empty;
+            txtb_NombreModif.Text = string.Empty;
+            txtb_DniAlta.Text = string.Empty;
+            txtb_DniModif.Text = string.Empty;
+            txtb_IdBaja.Text = string.Empty;
+            txtb_SueldoAlta.Text = string.Empty;
+            txtb_SueldoModif.Text = string.Empty;
+           
+        }
     }
+
 }

@@ -24,3 +24,29 @@ C:\Users\Martin\Desktop\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopFor
 C:\Users\Martin\Desktop\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\obj\Debug\net5.0-windows\ref\PetShopForms.dll
 C:\Users\Martin\Desktop\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\obj\Debug\net5.0-windows\PetShopForms.pdb
 C:\Users\Martin\Desktop\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\obj\Debug\net5.0-windows\PetShopForms.genruntimeconfig.cache
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\bin\Debug\net5.0-windows\PetShopForms.exe
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\bin\Debug\net5.0-windows\PetShopForms.deps.json
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\bin\Debug\net5.0-windows\PetShopForms.runtimeconfig.json
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\bin\Debug\net5.0-windows\PetShopForms.runtimeconfig.dev.json
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\bin\Debug\net5.0-windows\PetShopForms.dll
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\bin\Debug\net5.0-windows\ref\PetShopForms.dll
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\bin\Debug\net5.0-windows\PetShopForms.pdb
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\bin\Debug\net5.0-windows\Entidades.dll
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\bin\Debug\net5.0-windows\Entidades.pdb
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\obj\Debug\net5.0-windows\PetShopForms.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\obj\Debug\net5.0-windows\PetShopForms.FrmEmpleados.resources
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\obj\Debug\net5.0-windows\PetShopForms.FrmLogin.resources
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\obj\Debug\net5.0-windows\PetShopForms.FrmMenuPrincipal.resources
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\obj\Debug\net5.0-windows\PetShopForms.FrmStock.resources
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\obj\Debug\net5.0-windows\PetShopForms.FrmVentas.resources
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\obj\Debug\net5.0-windows\PetShopForms.Properties.Resources.resources
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\obj\Debug\net5.0-windows\PetShopForms.csproj.GenerateResource.cache
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\obj\Debug\net5.0-windows\PetShopForms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\obj\Debug\net5.0-windows\PetShopForms.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\obj\Debug\net5.0-windows\PetShopForms.AssemblyInfo.cs
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\obj\Debug\net5.0-windows\PetShopForms.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\obj\Debug\net5.0-windows\PetShopForms.csproj.CopyComplete
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\obj\Debug\net5.0-windows\PetShopForms.dll
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\obj\Debug\net5.0-windows\ref\PetShopForms.dll
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\obj\Debug\net5.0-windows\PetShopForms.pdb
+C:\Users\Martin\Desktop\TP-02-Funcional.r2.zip (Unzipped Files)\Parcial_Laboratorio2_PetShopApp\Pet Shop Boys\PetShopForms\obj\Debug\net5.0-windows\PetShopForms.genruntimeconfig.cache

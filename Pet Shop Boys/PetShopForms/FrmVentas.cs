@@ -14,7 +14,6 @@ namespace PetShopForms
     {
         Cliente cliente;
         Compra compra;
-        Producto producto;
         List<Producto> listaAux = new List<Producto>();
         bool pedidoTerminado = false;
         public FrmVentas()
@@ -54,6 +53,7 @@ namespace PetShopForms
             {
                 lbl_Errores.Visible = true;
             }
+            LimpiarCampos();
         }
 
         private void btn_RealizarVenta_Click(object sender, EventArgs e)
@@ -104,12 +104,14 @@ namespace PetShopForms
                 lbl_Errores.Visible = true;
                 lbl_Errores.Text = "Debe seleccionar un producto, la cantidad del mismo y un cliente para realizar la compra";
             }
+            LimpiarCampos();
         }
         private void btn_FinalizarVenta_Click(object sender, EventArgs e)
         {
             pedidoTerminado = true;
             lstb_Clientes.Enabled = true;
             MessageBox.Show("Pedido finalizado");
+            LimpiarCampos();
         }
         protected void ActualizarListaVentas()
         {
@@ -157,6 +159,15 @@ namespace PetShopForms
             {
                 e.Cancel = true;
             }
+        }
+
+        private void LimpiarCampos()
+        {
+            txtb_Apellido.Text = string.Empty;
+            txtb_Dni.Text = string.Empty;
+            txtb_Nombre.Text = string.Empty;
+            txt_CantidadDeProducto.Text = string.Empty;
+            
         }
     }
 }

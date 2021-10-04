@@ -31,7 +31,7 @@ namespace PetShopForms
                 lstb_Productos.Items.Add(item.DatosProducto());
             }
 
-            cmb_Tipos.DataSource = Enum.GetValues(typeof(Eproducto));   
+            cmb_Tipos.DataSource = Enum.GetValues(typeof(Eproducto));
         }
 
 
@@ -49,7 +49,8 @@ namespace PetShopForms
 
                     lstb_Productos.Items.Add(item.DatosProducto());
                 }
-            }else
+            }
+            else
             {
                 lstb_Productos.Items.Add("No hay productos cargados");
             }
@@ -67,10 +68,11 @@ namespace PetShopForms
                 producto = new Producto(double.Parse(txtb_Codigo.Text), float.Parse(txtb_Precio.Text), int.Parse(txtb_Cantidad.Text), aux, txtb_Descripcion.Text);
                 Local.Stock.Add(producto);
                 ActualizarProductos();
-
+                LimpiarCampos();
             }
             else
             {
+                LimpiarCampos();
                 lbl_ErrorAlta.Visible = true;
                 ActualizarProductos();
             }
@@ -100,13 +102,14 @@ namespace PetShopForms
                 }
                 Local.Stock.RemoveAt(indice);
                 Local.Stock.Insert(indice, producto);
+                LimpiarCampos();
                 ActualizarProductos();
             }
             else
             {
                 lbl_ErrorAlta.Text = "Error, seleccione un item y coloque una cantidad mayor a 0";
                 lbl_ErrorAlta.Visible = true;
-
+                LimpiarCampos();
                 ActualizarProductos();
             }
         }
@@ -117,7 +120,7 @@ namespace PetShopForms
             int auxiiar = 0;
 
 
-            if (lstb_Productos.SelectedItem != null)
+            if (lstb_Productos.SelectedItem != null && int.Parse(txtb_CantidadReducir.Text) > 0)
             {
 
                 foreach (Producto item in Local.Stock)
@@ -133,22 +136,25 @@ namespace PetShopForms
                     }
                 }
 
-                 if (auxiiar < 0)
-                   {
-                       lbl_ErrorAlta.Text = "Error, el producto no puede tener una cantidad menor a 0";
-                       lbl_ErrorAlta.Visible = true;                      
-                   }
-                   else
-                   {
-                       Local.Stock.RemoveAt(indice);
-                       Local.Stock.Insert(indice, producto);
-                       ActualizarProductos();
-                   }
+                if (auxiiar < 0)
+                {
+                    lbl_ErrorAlta.Text = "Error, el producto no puede tener una cantidad menor a 0";
+                    lbl_ErrorAlta.Visible = true;
+                    LimpiarCampos();
+                }
+                else
+                {
+                    Local.Stock.RemoveAt(indice);
+                    Local.Stock.Insert(indice, producto);
+                    LimpiarCampos();
+                    ActualizarProductos();
+                }
             }
             else
             {
-                lbl_ErrorAlta.Text = "Error, seleccione un item para reducir";
+                lbl_ErrorAlta.Text = "Error, seleccione un item para reducir y coloque un valor correcto";
                 lbl_ErrorAlta.Visible = true;
+                LimpiarCampos();
                 ActualizarProductos();
             }
 
@@ -160,6 +166,17 @@ namespace PetShopForms
             {
                 e.Cancel = true;
             }
+        }
+
+        private void LimpiarCampos()
+        {
+            txtb_CantAumentar.Text = string.Empty;
+            txtb_CantidadReducir.Text = string.Empty;
+            txtb_Codigo.Text = string.Empty;
+            txtb_Descripcion.Text = string.Empty;
+            txtb_Precio.Text = string.Empty;
+            txtb_Cantidad.Text = string.Empty;
+
         }
     }
 }
