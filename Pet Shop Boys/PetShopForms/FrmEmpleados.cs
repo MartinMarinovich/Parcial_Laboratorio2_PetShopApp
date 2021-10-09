@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Entidades;
@@ -26,6 +27,8 @@ namespace PetShopForms
                 }
             }
 
+            btn_BajaEmpleado.ForeColor = Color.Red;
+           
             ActualizarNominaLstbx();
         }
 
@@ -129,8 +132,8 @@ namespace PetShopForms
                 {
                     Local.Nomina.RemoveAt(indice);
                     txtb_IdBaja.Text = string.Empty;
-                    
-                    ActualizarNominaLstbx();    
+
+                    ActualizarNominaLstbx();
                 }
 
                 LimpiarCampos();
@@ -179,7 +182,7 @@ namespace PetShopForms
             txtb_IdBaja.Text = string.Empty;
             txtb_SueldoAlta.Text = string.Empty;
             txtb_SueldoModif.Text = string.Empty;
-           
+
         }
     }
 

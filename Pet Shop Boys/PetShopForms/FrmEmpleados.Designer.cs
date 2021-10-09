@@ -29,6 +29,7 @@ namespace PetShopForms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmpleados));
             this.lblEmpleados = new System.Windows.Forms.Label();
             this.lstb_Nomina = new System.Windows.Forms.ListBox();
             this.txtb_SueldoModif = new System.Windows.Forms.TextBox();
@@ -90,21 +91,21 @@ namespace PetShopForms
             // 
             // txtb_SueldoModif
             // 
-            this.txtb_SueldoModif.Location = new System.Drawing.Point(68, 457);
+            this.txtb_SueldoModif.Location = new System.Drawing.Point(73, 427);
             this.txtb_SueldoModif.Name = "txtb_SueldoModif";
             this.txtb_SueldoModif.Size = new System.Drawing.Size(169, 23);
             this.txtb_SueldoModif.TabIndex = 14;
             // 
             // txtb_ApellidoModif
             // 
-            this.txtb_ApellidoModif.Location = new System.Drawing.Point(70, 289);
+            this.txtb_ApellidoModif.Location = new System.Drawing.Point(75, 259);
             this.txtb_ApellidoModif.Name = "txtb_ApellidoModif";
             this.txtb_ApellidoModif.Size = new System.Drawing.Size(169, 23);
             this.txtb_ApellidoModif.TabIndex = 13;
             // 
             // txtb_NombreModif
             // 
-            this.txtb_NombreModif.Location = new System.Drawing.Point(68, 219);
+            this.txtb_NombreModif.Location = new System.Drawing.Point(73, 189);
             this.txtb_NombreModif.Name = "txtb_NombreModif";
             this.txtb_NombreModif.Size = new System.Drawing.Size(169, 23);
             this.txtb_NombreModif.TabIndex = 12;
@@ -112,7 +113,7 @@ namespace PetShopForms
             // lblNombreModifc
             // 
             this.lblNombreModifc.AutoSize = true;
-            this.lblNombreModifc.Location = new System.Drawing.Point(68, 183);
+            this.lblNombreModifc.Location = new System.Drawing.Point(73, 153);
             this.lblNombreModifc.Name = "lblNombreModifc";
             this.lblNombreModifc.Size = new System.Drawing.Size(93, 15);
             this.lblNombreModifc.TabIndex = 19;
@@ -121,7 +122,7 @@ namespace PetShopForms
             // lblApellidoModif
             // 
             this.lblApellidoModif.AutoSize = true;
-            this.lblApellidoModif.Location = new System.Drawing.Point(70, 260);
+            this.lblApellidoModif.Location = new System.Drawing.Point(75, 230);
             this.lblApellidoModif.Name = "lblApellidoModif";
             this.lblApellidoModif.Size = new System.Drawing.Size(92, 15);
             this.lblApellidoModif.TabIndex = 21;
@@ -130,7 +131,7 @@ namespace PetShopForms
             // lblSueldomodif
             // 
             this.lblSueldomodif.AutoSize = true;
-            this.lblSueldomodif.Location = new System.Drawing.Point(70, 424);
+            this.lblSueldomodif.Location = new System.Drawing.Point(75, 394);
             this.lblSueldomodif.Name = "lblSueldomodif";
             this.lblSueldomodif.Size = new System.Drawing.Size(85, 15);
             this.lblSueldomodif.TabIndex = 22;
@@ -138,7 +139,7 @@ namespace PetShopForms
             // 
             // btn_ModifcarEmp
             // 
-            this.btn_ModifcarEmp.Location = new System.Drawing.Point(68, 522);
+            this.btn_ModifcarEmp.Location = new System.Drawing.Point(73, 492);
             this.btn_ModifcarEmp.Name = "btn_ModifcarEmp";
             this.btn_ModifcarEmp.Size = new System.Drawing.Size(169, 40);
             this.btn_ModifcarEmp.TabIndex = 26;
@@ -149,7 +150,7 @@ namespace PetShopForms
             // lblModificar
             // 
             this.lblModificar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblModificar.Location = new System.Drawing.Point(68, 140);
+            this.lblModificar.Location = new System.Drawing.Point(54, 61);
             this.lblModificar.Name = "lblModificar";
             this.lblModificar.Size = new System.Drawing.Size(188, 20);
             this.lblModificar.TabIndex = 27;
@@ -158,7 +159,7 @@ namespace PetShopForms
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(77, 344);
+            this.label3.Location = new System.Drawing.Point(82, 314);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 15);
             this.label3.TabIndex = 32;
@@ -166,7 +167,7 @@ namespace PetShopForms
             // 
             // txtb_DniModif
             // 
-            this.txtb_DniModif.Location = new System.Drawing.Point(68, 377);
+            this.txtb_DniModif.Location = new System.Drawing.Point(73, 347);
             this.txtb_DniModif.Name = "txtb_DniModif";
             this.txtb_DniModif.Size = new System.Drawing.Size(169, 23);
             this.txtb_DniModif.TabIndex = 31;
@@ -328,14 +329,14 @@ namespace PetShopForms
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox3.Location = new System.Drawing.Point(633, 105);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(352, 208);
+            this.groupBox3.Size = new System.Drawing.Size(352, 186);
             this.groupBox3.TabIndex = 39;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "BAJAS";
             // 
             // txtb_IdBaja
             // 
-            this.txtb_IdBaja.Location = new System.Drawing.Point(6, 115);
+            this.txtb_IdBaja.Location = new System.Drawing.Point(43, 79);
             this.txtb_IdBaja.Name = "txtb_IdBaja";
             this.txtb_IdBaja.PlaceholderText = "Ingrese el ID del empleado";
             this.txtb_IdBaja.Size = new System.Drawing.Size(185, 23);
@@ -343,7 +344,7 @@ namespace PetShopForms
             // 
             // btn_BajaEmpleado
             // 
-            this.btn_BajaEmpleado.Location = new System.Drawing.Point(6, 166);
+            this.btn_BajaEmpleado.Location = new System.Drawing.Point(43, 130);
             this.btn_BajaEmpleado.Name = "btn_BajaEmpleado";
             this.btn_BajaEmpleado.Size = new System.Drawing.Size(263, 34);
             this.btn_BajaEmpleado.TabIndex = 2;
@@ -353,7 +354,7 @@ namespace PetShopForms
             // 
             // lblId
             // 
-            this.lblId.Location = new System.Drawing.Point(6, 75);
+            this.lblId.Location = new System.Drawing.Point(43, 39);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(185, 29);
             this.lblId.TabIndex = 24;
@@ -420,10 +421,11 @@ namespace PetShopForms
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lstb_Nomina);
             this.Controls.Add(this.lblEmpleados);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmEmpleados";
-            this.Text = "FrmEmpleados";
+            this.Text = "Pet Shop Boys Empleados";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmEmpleados_FormClosing);
             this.Load += new System.EventHandler(this.FrmEmpleados_Load);
             this.groupBox1.ResumeLayout(false);
