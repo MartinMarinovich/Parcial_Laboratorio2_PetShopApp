@@ -17,7 +17,7 @@ namespace Entidades
         /// <param name="comprador"></param>
         /// <param name="monto"></param>
         /// <param name="listaDeProductos"></param>
-        public Compra(Cliente comprador, float monto, List<Producto> listaDeProductos)
+        public Compra(Cliente comprador, float monto, List<Producto> listaDeProductos, Envio envio)
         {
             Codigo = primerCodigo;
             primerCodigo++;
@@ -115,7 +115,7 @@ namespace Entidades
         {
             
             StringBuilder sb = new StringBuilder();
-            sb.AppendFormat("{0,-12} {1,8}     {2,12}\n", this.Codigo.ToString(),this.Monto.ToString(),this.Comprador.Datos());
+            sb.AppendFormat("{0,-12} {1,8}     {2,12}\n", this.Codigo.ToString(),this.Monto.ToString(),this.Comprador.DatosCliente());
             sb.AppendLine("");
             sb.AppendLine($"\n{MostrarCarrito()}");
             

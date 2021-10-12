@@ -28,5 +28,12 @@ namespace Entidades
             Vacuna
         }
 
+
+        public enum Evehiculo
+        {
+            Motocicleta,
+            Miniflete
+        }
+
     }
 }

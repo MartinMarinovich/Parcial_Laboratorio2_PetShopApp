@@ -12,24 +12,35 @@ namespace PetShopForms
 {
     public partial class FrmVentas : Form
     {
+        Usuario usuarioLogueado = null;
         Cliente cliente = null;
-        Compra compra;
+        Compra compra = null;
+        Envio envio = null;
+        Producto auxProducto;
         List<Producto> listaAux = new List<Producto>();
 
         bool pedidoTerminado = false;
         bool clienteseleccionado = false;
         float auxMonto = 0;
-        public FrmVentas()
+        public FrmVentas(Usuario aux)
         {
-
             InitializeComponent();
-
-
+            usuarioLogueado = aux;
         }
 
         private void FrmVentas_Load(object sender, EventArgs e)
         {
+            if (typeof(Empleado) == usuarioLogueado.GetType())
+            {
+                btn_HistorialDeVentas.Visible = false;
+                grpbAltas.Visible = false;
+            }
+
             lbl_Errores.Visible = false;
+            btn_AgregarProducto.Enabled = false;
+            btn_FinalizarVenta.Enabled = false;
+            txt_CantidadDeProducto.Enabled = false;
+
             foreach (Producto item in Local.Stock)
             {
                 lstb_Productos.Items.Add(item.DatosProducto());
@@ -37,7 +48,7 @@ namespace PetShopForms
             }
             foreach (Cliente item in Local.Clientela)
             {
-                lstb_Clientes.Items.Add(item.Datos());
+                lstb_Clientes.Items.Add(item.DatosCliente());
 
             }
 
@@ -62,7 +73,9 @@ namespace PetShopForms
         private void btn_RealizarVenta_Click(object sender, EventArgs e)
         {
             int auxCant = 0;
-            
+            int indice = 0;
+            int stockproducto = 0;
+            double dineroCliente = 0;
 
             if (pedidoTerminado == true)
             {
@@ -72,44 +85,38 @@ namespace PetShopForms
 
             if (Local.ValidarStringNumerico(txt_CantidadDeProducto.Text) && lstb_Productos.SelectedItem != null)
             {
-                lstb_Clientes.Enabled = false;
+                
                 auxCant = int.Parse(txt_CantidadDeProducto.Text);
-
-                if (clienteseleccionado == false)
-                {
-                    foreach (Cliente item in Local.Clientela)
-                    {
-                        if (item.Datos() == lstb_Clientes.SelectedItem.ToString())
-                        {
-                            cliente = item;
-                            clienteseleccionado = true;
-                        }
-
-                    }
-                }
 
                 if (clienteseleccionado == true)
                 {
-
-                    for (int i = 0; i < auxCant; i++)
+                    dineroCliente = cliente.Dinero;
+                    for (int i = 0; i <auxCant; i++)
                     {
                         foreach (Producto item in Local.Stock)
                         {
                             if (item.DatosProducto() == lstb_Productos.SelectedItem.ToString())
                             {
-                                listaAux.Add(item);
-                                auxMonto = auxMonto + item.Precio;
+                                auxProducto = item;
+                                stockproducto = auxProducto.Stock;
+                                stockproducto = stockproducto - auxCant;
+
+                                if (stockproducto >= 0 && dineroCliente >= 0)
+                                {
+                                    indice = Local.Stock.IndexOf(item);
+                                    listaAux.Add(item);
+                                    auxMonto = auxMonto + item.Precio;
+                                }else
+                                {
+                                    lbl_Errores.Text = "No hay mas stock del producto";
+                                   
+                                }
                             }
                         }
                     }
-
-                    if (listaAux != null)
-                    {
-                        foreach (Producto item in listaAux)
-                        {
-                            lstb_HistorialVentas.Items.Add(item.DatosProducto());
-                        }
-                    }
+                    auxProducto.Stock = stockproducto;
+                    Local.Stock.RemoveAt(indice);
+                    Local.Stock.Insert(indice, auxProducto);
                     ActualizarCampos();
                 }
                 else
@@ -123,19 +130,26 @@ namespace PetShopForms
                 lbl_Errores.Visible = true;
                 lbl_Errores.Text = "Debe seleccionar un producto, la cantidad del mismo y un cliente para realizar la venta";
             }
+
             LimpiarCampos();
         }
         private void btn_FinalizarVenta_Click(object sender, EventArgs e)
         {
             pedidoTerminado = true;
-
-            compra = new Compra(cliente, auxMonto, listaAux);
+            btn_IniciarPedido.Enabled = true;
+            envio = Local.AsignarEnvio(cliente, listaAux);
+            compra = new Compra(cliente, auxMonto, listaAux, envio);
             Local.Ventas.Add(compra);
             lstb_Clientes.Enabled = true;
-            MessageBox.Show("Pedido finalizado");
+            lstb_HistorialVentas.Items.Add("");
+            lstb_HistorialVentas.Items.Add("PEDIDO FINALIZADO");
+            lstb_HistorialVentas.Items.Add("");
+            lstb_HistorialVentas.Items.Add($"Total a pagar productos: ${auxMonto}");
+            lstb_HistorialVentas.Items.Add($"Costo de envio: ${envio.Precio}");
+            lstb_HistorialVentas.Items.Add("");
+            lstb_HistorialVentas.Items.Add($"MONTO TOTAL DEL PEDIDO: ${envio.Precio + auxMonto}");
             LimpiarCampos();
         }
-
 
 
         protected void ActualizarCampos()
@@ -146,7 +160,7 @@ namespace PetShopForms
 
                 foreach (Cliente item in Local.Clientela)
                 {
-                    lstb_Clientes.Items.Add(item.Datos());
+                    lstb_Clientes.Items.Add(item.DatosCliente());
 
                 }
             }
@@ -162,21 +176,24 @@ namespace PetShopForms
                 }
             }
 
+            if (listaAux != null)
+            {             
+                lstb_HistorialVentas.Items.Clear();
+                lstb_HistorialVentas.Items.Add("*** PEDIDO EN CURSO ***");
+                lstb_HistorialVentas.Items.Add("");
+                lstb_HistorialVentas.Items.Add("Nombre        Apellido        DNI          Dinero");
+                lstb_HistorialVentas.Items.Add("");
+                lstb_HistorialVentas.Items.Add(cliente.DatosCliente());
+                lstb_HistorialVentas.Items.Add("");
+                lstb_HistorialVentas.Items.Add("Producto        Descripcion        Precio          Dinero");
+                lstb_HistorialVentas.Items.Add("");
 
-
-            lstb_HistorialVentas.Items.Clear();
-            lstb_HistorialVentas.Items.Add("*** PEDIDO EN CURSO ***");
-            lstb_HistorialVentas.Items.Add("");
-            lstb_HistorialVentas.Items.Add("Nombre        Apellido        DNI          Dinero");
-            lstb_HistorialVentas.Items.Add(cliente.Datos());
-            lstb_HistorialVentas.Items.Add("");
-            lstb_HistorialVentas.Items.Add("Producto        Descripcion        Precio          Dinero");
-            foreach (Producto item in listaAux)
-            {
-                lstb_HistorialVentas.Items.Add(item.DatosProducto());
-
+                foreach (Producto item in listaAux)
+                {
+                   
+                    lstb_HistorialVentas.Items.Add(item.DatosParaVenta());
+                }
             }
-
         }
 
         private void FrmVentas_FormClosing(object sender, FormClosingEventArgs e)
@@ -194,6 +211,50 @@ namespace PetShopForms
             txtb_Nombre.Text = string.Empty;
             txt_CantidadDeProducto.Text = string.Empty;
 
+        }
+
+        private void btn_IniciarPedido_Click(object sender, EventArgs e)
+        {
+            if (pedidoTerminado == false)
+            {
+                btn_IniciarPedido.Enabled = false;
+                btn_FinalizarVenta.Enabled = true;
+            }
+
+            if (clienteseleccionado == false)
+            {
+                foreach (Cliente item in Local.Clientela)
+                {
+                    if (item.DatosCliente() == lstb_Clientes.SelectedItem.ToString())
+                    {
+                        cliente = item;
+                        clienteseleccionado = true;
+                        btn_AgregarProducto.Enabled = true;
+                        txt_CantidadDeProducto.Enabled = true;
+                        lstb_Clientes.Enabled = false;
+                    }
+
+                }
+
+                if (cliente != null)
+                {
+                    lstb_HistorialVentas.Items.Clear();
+                    lstb_HistorialVentas.Items.Add("*** PEDIDO EN CURSO ***");
+                    lstb_HistorialVentas.Items.Add("");
+                    lstb_HistorialVentas.Items.Add("Nombre        Apellido        DNI          Dinero");
+                    lstb_HistorialVentas.Items.Add("");
+                    lstb_HistorialVentas.Items.Add(cliente.DatosCliente());
+                    lstb_HistorialVentas.Items.Add("");
+                    lstb_HistorialVentas.Items.Add("Producto        Descripcion        Precio          Dinero");
+                    lstb_HistorialVentas.Items.Add("");
+                }
+            }
+        }
+
+        private void btn_HistorialDeVentas_Click(object sender, EventArgs e)
+        {
+            FrmHistorialVentas formventas = new FrmHistorialVentas();
+            formventas.Show();
         }
     }
 }

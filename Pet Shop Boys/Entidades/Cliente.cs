@@ -10,7 +10,9 @@ namespace Entidades
         string apellido;
         double dni;
         double saldo;
+        int distanciaDelDomicilio;
         static Random rand;
+        static Random randKm;
 
         /// <summary>
         /// Constructor de la clase cliente, para el monto genera un numero entre 300 y 5000
@@ -24,6 +26,7 @@ namespace Entidades
             Apellido = apellido;
             Dinero = rand.Next(300, 5000);
             DNI = dni;
+            Distancia = randKm.Next(1, 30);
         }
 
         /// <summary>
@@ -31,7 +34,8 @@ namespace Entidades
         /// </summary>
         static Cliente()
         {
-            rand = new Random();       
+            rand = new Random();
+            randKm = new Random();
         }
         
         /// <summary>
@@ -107,16 +111,32 @@ namespace Entidades
             {
                 return this.dni;
             }
+
         }
+        public int Distancia
+        {
+            set
+            {
+                if (value > 0)
+                {
+                    this.distanciaDelDomicilio = value;
+                }
+            }
+            get
+            {
+                return this.distanciaDelDomicilio;
+            }
+        }
+
+
         /// <summary>
         /// Meotodo unico que retorna en forma de string los datos del cliente
         /// </summary>
         /// <returns></returns>
-        public string Datos()
+        public string DatosCliente()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine($" {Nombre}        {Apellido}     {DNI.ToString()}             {Dinero.ToString()}");
-            return sb.ToString();
+            string formato = string.Format("{0,-12}{1,10}{2,17}{3,15}{4,18}", Nombre, Apellido, DNI.ToString(), Dinero.ToString(), Distancia.ToString());
+            return formato;
 
         }
 

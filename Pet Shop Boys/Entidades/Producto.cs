@@ -133,11 +133,17 @@ namespace Entidades
         public string DatosProducto()
         {
             StringBuilder sb = new StringBuilder();
-            // sb.AppendLine($"{Codigo}     {Tipo}        {Descripcion}        ${Precio}      {Stock}");
             sb.AppendJoin("                   ", Codigo, Tipo, Descripcion, Precio, Stock);
             return sb.ToString();
-
         }
+        
 
+        public string DatosParaVenta()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendJoin("                 ", Codigo, Tipo, Descripcion, Precio);
+
+            return sb.ToString();
+        }
     }
 }

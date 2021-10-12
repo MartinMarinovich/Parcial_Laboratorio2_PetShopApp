@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using static Entidades.Enumerados;
 
 namespace Entidades
 {
@@ -26,6 +27,7 @@ namespace Entidades
             HardcodearDatosInciales();
             HardcodearProductos();
             HardocdearClientes();
+            HardcodearVentas();
         }
 
 
@@ -206,19 +208,44 @@ namespace Entidades
         private static void HardcodearProductos()
         {
             List<Producto> productosHarcode = new List<Producto> {
-                new Producto(3001,30,6,Enumerados.Eproducto.Cepillo,"Fino"),
-                new Producto(3006,500,100,Enumerados.Eproducto.Alimento,"Perro"),
-                new Producto(3007,700,100,Enumerados.Eproducto.Alimento,"Gato"),
-                new Producto(4008,1000,10,Enumerados.Eproducto.Vacuna,"Antirrabica"),
-                new Producto(2002,65,34,Enumerados.Eproducto.Golosina,"Dentasticks"),
-                new Producto(2003,62,34,Enumerados.Eproducto.Golosina,"Carne"),
-                new Producto(3008,20,15,Enumerados.Eproducto.Antiparasitario,"Generico")
+                new Producto(3001,30,6,Eproducto.Cepillo,"Fino"),
+                new Producto(3006,500,100,Eproducto.Alimento,"Perro"),
+                new Producto(3007,700,100,Eproducto.Alimento,"Gato"),
+                new Producto(4008,1000,10,Eproducto.Vacuna,"Antirrabica"),
+                new Producto(2002,65,34,Eproducto.Golosina,"Dentasticks"),
+                new Producto(2003,62,34,Eproducto.Golosina,"Carne"),
+                new Producto(3008,20,15,Eproducto.Antiparasitario,"Generico")
             };
 
 
             foreach (Producto item in productosHarcode)
             {
                 Stock.Add(item);
+            }
+
+        }
+
+
+        private static void HardcodearVentas()
+        {
+                /*Producto
+                new Producto prod1(4008, 1000, 10, Eproducto.Vacuna, "Antirrabica"),
+                new Producto(2002, 65, 34, Eproducto.Golosina, "Dentasticks"),
+                new Producto(2003, 62, 34, Eproducto.Golosina, "Carne"),
+                new Producto(3008, 20, 15, Eproducto.Antiparasitario, "Generico")
+            */
+
+            List<Compra> ventasHardcode = new List<Compra> {
+                new Compra(new Cliente("Fabricio","Rodriguez",42333560),3000,Local.Stock.GetRange(0,4),new Envio(4000,Evehiculo.Miniflete,30)),
+                new Compra(new Cliente("Martin", "Martinez",40033560),600,Local.Stock.GetRange(0,2),new Envio(4000,Evehiculo.Miniflete,30)),
+                new Compra(new Cliente("Juan", "Rodriguez",21033560),1500,Local.Stock.GetRange(0,3),new Envio(4000,Evehiculo.Motocicleta,12)),
+                new Compra(new Cliente("Pedro","Parcere",31333560),2500,Local.Stock.GetRange(0,5),new Envio(4000,Evehiculo.Motocicleta,11)),                        
+            };
+
+
+            foreach (Compra item in ventasHardcode)
+            {
+                Ventas.Add(item);
             }
 
         }
@@ -261,6 +288,38 @@ namespace Entidades
 
                 }
             }
+
+            return null;
+        }
+
+
+        public static Envio AsignarEnvio(Cliente cliente, List<Producto> listaDeProductos)
+        {
+            Envio auxEnvio;
+            Evehiculo auxVehiculo;
+            int cantProductos = 0;
+            float montoDelEnvio = 0;
+            cantProductos = listaDeProductos.Count;
+            auxVehiculo = Evehiculo.Motocicleta;
+
+            if (cantProductos < 4)
+            {
+                montoDelEnvio = 75 * cliente.Distancia;
+            }
+            else
+            {
+                montoDelEnvio = 100 * cliente.Distancia;
+                auxVehiculo = Evehiculo.Miniflete;
+            }
+
+
+            auxEnvio = new Envio(montoDelEnvio, auxVehiculo, cliente.Distancia);
+
+            if (auxEnvio != null)
+            {
+                return auxEnvio;
+            }
+
 
             return null;
         }

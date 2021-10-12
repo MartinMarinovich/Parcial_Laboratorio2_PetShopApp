@@ -17,15 +17,20 @@ namespace PetShopForms
         FrmEmpleados formEmpleados;
         FrmStock formStock;
         FrmVentas formVentas;
-        public FrmMenuPrincipal()
+        Usuario usuarioLogueado;
+        public FrmMenuPrincipal(Usuario aux)
         {
             InitializeComponent();
-            
+            usuarioLogueado = aux;
         }
 
         private void FrmMenuPrincipal_Load(object sender, EventArgs e)
         {
-
+            
+             if (typeof(Empleado) == usuarioLogueado.GetType())
+            {
+                btn_Empleados.Visible = false;
+            }
         }
 
 
@@ -45,7 +50,7 @@ namespace PetShopForms
 
         private void btn_Ventas_Click(object sender, EventArgs e)
         {
-            formVentas = new FrmVentas();
+            formVentas = new FrmVentas(usuarioLogueado);
             formVentas.BackColor = Color.PowderBlue;
             formVentas.Show();
             

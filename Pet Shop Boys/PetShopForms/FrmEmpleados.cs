@@ -9,88 +9,36 @@ namespace PetShopForms
     public partial class FrmEmpleados : Form
     {
         Empleado empleado;
+        FrmABM abm;
+        int controlador = 0;
         public FrmEmpleados()
         {
-            InitializeComponent();
-
-
-
+            InitializeComponent();     
         }
 
         private void FrmEmpleados_Load(object sender, System.EventArgs e)
         {
+            abm = new FrmABM(controlador);
+            abm.MdiParent = this;
+            abm.BackColor = Color.PowderBlue;
+
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is MdiClient)
+                {
+                    ctrl.BackColor = Color.Red;
+                }
+            }
+          
             foreach (Usuario item in Local.Nomina)
             {
-                if (typeof(Empleado) == item.GetType())
-                {
-                    lstb_Nomina.Items.Add(item.Datos());
-                }
+                lstb_Nomina.Items.Add(item.Datos());  
             }
 
             btn_BajaEmpleado.ForeColor = Color.Red;
            
             ActualizarNominaLstbx();
         }
-
-        private void btn_AltaEmpleado_Click(object sender, System.EventArgs e)
-        {
-
-
-            if (!string.IsNullOrEmpty(txtb_NombreAlta.Text) && !string.IsNullOrEmpty(txtb_ApellidoALta.Text)
-             && !string.IsNullOrEmpty(txb_Usuario.Text) && !string.IsNullOrEmpty(txtb_Contraseña.Text)
-             && !string.IsNullOrEmpty(txtb_DniAlta.Text) && !string.IsNullOrEmpty(txtb_SueldoAlta.Text))
-            {
-                empleado = new(txtb_NombreAlta.Text, txtb_ApellidoALta.Text, double.Parse(txtb_DniAlta.Text), float.Parse(txtb_SueldoAlta.Text)
-                    , txb_Usuario.Text, txtb_Contraseña.Text);
-
-                Local.Nomina.Add(empleado);
-                ActualizarNominaLstbx();
-
-            }
-            else
-            {
-                MessageBox.Show("Error, debe completar los campos para cargar un empleado");
-            }
-            LimpiarCampos();
-
-        }
-
-
-        private void btn_ModifcarEmp_Click(object sender, System.EventArgs e)
-        {
-            Empleado auxEmp = null;
-            int indice = 0;
-            if (!string.IsNullOrEmpty(txtb_NombreModif.Text) && !string.IsNullOrEmpty(txtb_ApellidoModif.Text)
-                && !string.IsNullOrEmpty(txtb_SueldoModif.Text) && !string.IsNullOrEmpty(txtb_DniModif.Text) && lstb_Nomina.SelectedItem != null)
-            {
-
-                foreach (Usuario item in Local.Nomina)
-                {
-                    if (typeof(Empleado) == item.GetType())
-                    {
-                        if (item.Datos() == lstb_Nomina.SelectedItem.ToString())
-                        {
-                            auxEmp = (Empleado)item;
-                            indice = Local.Nomina.IndexOf(item);
-
-                        }
-                    }
-
-                }
-                Local.Nomina.RemoveAt(indice);
-                Empleado.MoficarEmpleado(auxEmp, txtb_NombreModif.Text, txtb_ApellidoModif.Text, double.Parse(txtb_DniModif.Text), float.Parse(txtb_SueldoModif.Text));
-                Local.Nomina.Insert(indice, auxEmp);
-                ActualizarNominaLstbx();
-            }
-            else
-            {
-
-                MessageBox.Show("Error, debe completar los campos para modificar un empleado");
-            }
-            LimpiarCampos();
-
-        }
-
 
 
         private void btn_BajaEmpleado_Click(object sender, System.EventArgs e)
@@ -122,7 +70,7 @@ namespace PetShopForms
 
                     }
                 }
-
+                
                 if (indice == -1)
                 {
 
@@ -144,7 +92,7 @@ namespace PetShopForms
             }
         }
 
-        protected void ActualizarNominaLstbx()
+        public void ActualizarNominaLstbx()
         {
             if (lstb_Nomina.Items.Count != 0)
             {
@@ -155,9 +103,12 @@ namespace PetShopForms
                     if (typeof(Empleado) == item.GetType())
                     {
                         lstb_Nomina.Items.Add(item.Datos());
+                        
                     }
                 }
+                
             }
+            
         }
 
         private void FrmEmpleados_FormClosing(object sender, FormClosingEventArgs e)
@@ -168,8 +119,9 @@ namespace PetShopForms
             }
         }
 
-        private void LimpiarCampos()
+        public void LimpiarCampos()
         {
+            /*
             txb_Usuario.Text = string.Empty;
             txtb_ApellidoALta.Text = string.Empty;
             txtb_ApellidoModif.Text = string.Empty;
@@ -182,7 +134,22 @@ namespace PetShopForms
             txtb_IdBaja.Text = string.Empty;
             txtb_SueldoAlta.Text = string.Empty;
             txtb_SueldoModif.Text = string.Empty;
+            */
+        }
 
+        private void btn_AltaEmpleado_Click(object sender, System.EventArgs e)
+        {
+            controlador = 1;
+            abm = new FrmABM(controlador);
+            abm.Show();
+        }
+
+        private void btn_ModificarEmpleado_Click(object sender, System.EventArgs e)
+        {
+            controlador = 2;
+            abm = new FrmABM(controlador);
+            
+            abm.Show();
         }
     }
 

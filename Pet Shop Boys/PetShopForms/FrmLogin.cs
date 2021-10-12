@@ -5,32 +5,31 @@ using Entidades;
 namespace PetShopForms
 {
     public partial class FrmLogin : Form
-    {
-        /// Formlogin
-        FrmVentas formVentas;
+    { 
         Usuario aux;
         public FrmLogin()
         {
             InitializeComponent();
-            
+
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-           
+
             ListViewGroup Admins = new ListViewGroup("Administradores", HorizontalAlignment.Left);
             ListViewGroup Emps = new ListViewGroup("Empleados", HorizontalAlignment.Left);
-            
+
             foreach (Usuario item in Local.Nomina)
             {
                 if (typeof(Empleado) == item.GetType())
                 {
-                    lstView_Nomina.Items.Add(new ListViewItem(item.DatosLogin(),Emps));
-                }else
+                    lstView_Nomina.Items.Add(new ListViewItem(item.DatosLogin(), Emps));
+                }
+                else
                 {
                     lstView_Nomina.Items.Add(new ListViewItem(item.DatosLogin(), Admins));
                 }
-                
+
             }
 
             lstView_Nomina.Groups.Add(Admins);
@@ -40,26 +39,24 @@ namespace PetShopForms
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-           
-            if (aux != null )
+
+            if (aux != null)
             {
-               if (typeof(Empleado) == aux.GetType())
-               {
-                    formVentas = new FrmVentas();
-                    formVentas.BackColor = Color.Salmon;
-                    formVentas.Show();
-                    
-                    
-               }else
-               {
-                    FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal();
+                if (typeof(Empleado) == aux.GetType())
+                {
+                    FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(aux);
+                    menuPrincipal.BackColor = Color.Salmon;
+                    menuPrincipal.Show();
+                }
+                else
+                {
+                    FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(aux);
 
                     menuPrincipal.Show();
-               }
-                
-               
+                }
+
                 this.Hide();
-                
+
             }
             else
             {
@@ -69,7 +66,7 @@ namespace PetShopForms
 
         private void btn_CompletarComoEmpleado_Click(object sender, EventArgs e)
         {
-            aux =  Local.LoguearUsuario("Obiwan", "Kenobi");
+            aux = Local.LoguearUsuario("Obiwan", "Kenobi");
 
             txtb_Usuario.Text = "Obiwan";
             txtb_Contraseña.Text = "Kenobi";
@@ -86,7 +83,7 @@ namespace PetShopForms
 
         private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show($"Desea salir?","Confirmar", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (MessageBox.Show($"Desea salir?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.No)
             {
                 e.Cancel = true;
             }
