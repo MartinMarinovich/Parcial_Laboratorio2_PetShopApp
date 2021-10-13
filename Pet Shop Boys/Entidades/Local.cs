@@ -187,7 +187,7 @@ namespace Entidades
                 new Administrador("Lucas", "Bogdan", 22494000, 40000,"Admin","Root"),
                 new Administrador("Maria", "Pardem", 44295202, 90000,"Sudo","Suuu"),
                 new Administrador("Rodrigo", "Parsein", 23991590, 200000,"Notienesentido","Keapaso"),
-                new Empleado("Lucas", "Arizona", 26544678, 25000,"Locoart123","Jojo"),
+                new Empleado("Patricio", "Arizona", 26544678, 25000,"Locoart123","Jojo"),
                 new Empleado("Federico", "Bredels", 26544678, 25000,"Abcd","1234"),
                 new Empleado("Alma", "Fernandez", 26544678, 25000,"Usuario","Contraseña"),
                 new Empleado("Mariana", "Lopez", 26544678, 25000,"Lord","Voldemort"),

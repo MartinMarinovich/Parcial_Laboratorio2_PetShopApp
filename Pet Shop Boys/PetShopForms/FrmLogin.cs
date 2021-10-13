@@ -46,17 +46,17 @@ namespace PetShopForms
                 {
                     FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(aux);
                     menuPrincipal.BackColor = Color.Salmon;
-                    menuPrincipal.Show();
+                    this.Hide();
+                    menuPrincipal.ShowDialog();
                 }
                 else
                 {
                     FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(aux);
-
-                    menuPrincipal.Show();
+                    this.Hide();
+                    menuPrincipal.ShowDialog();
                 }
 
-                this.Hide();
-
+                this.Show();
             }
             else
             {

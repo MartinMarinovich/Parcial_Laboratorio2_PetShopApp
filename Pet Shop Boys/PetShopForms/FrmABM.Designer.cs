@@ -80,7 +80,7 @@ namespace PetShopForms
             // lblContraseña
             // 
             this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Location = new System.Drawing.Point(0, 300);
+            this.lblContraseña.Location = new System.Drawing.Point(0, 295);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(69, 15);
             this.lblContraseña.TabIndex = 36;
@@ -184,6 +184,7 @@ namespace PetShopForms
             this.btn_ModificarEmpleado.TabIndex = 53;
             this.btn_ModificarEmpleado.Text = "Modificar Empleado";
             this.btn_ModificarEmpleado.UseVisualStyleBackColor = true;
+            this.btn_ModificarEmpleado.Click += new System.EventHandler(this.btn_ModificarEmpleado_Click);
             // 
             // FrmABM
             // 
@@ -197,6 +198,7 @@ namespace PetShopForms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmABM";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmABM";
             this.TransparencyKey = System.Drawing.Color.Gray;
             this.Load += new System.EventHandler(this.FrmABM_Load);

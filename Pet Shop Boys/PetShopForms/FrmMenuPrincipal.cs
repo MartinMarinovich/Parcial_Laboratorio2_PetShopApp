@@ -58,7 +58,11 @@ namespace PetShopForms
 
         private void FrmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show($"Desea salir?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (MessageBox.Show($"Desea salir?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+               // Application.Exit();
+       
+            }else
             {
                 e.Cancel = true;
             }

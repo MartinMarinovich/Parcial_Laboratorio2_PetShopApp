@@ -186,7 +186,6 @@ namespace PetShopForms
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.IsMdiContainer = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmEmpleados";

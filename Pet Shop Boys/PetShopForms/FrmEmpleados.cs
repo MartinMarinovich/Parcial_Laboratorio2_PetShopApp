@@ -13,30 +13,21 @@ namespace PetShopForms
         int controlador = 0;
         public FrmEmpleados()
         {
-            InitializeComponent();     
+            InitializeComponent();
         }
 
         private void FrmEmpleados_Load(object sender, System.EventArgs e)
         {
-            abm = new FrmABM(controlador);
-            abm.MdiParent = this;
-            abm.BackColor = Color.PowderBlue;
-
-            foreach (Control ctrl in this.Controls)
-            {
-                if (ctrl is MdiClient)
-                {
-                    ctrl.BackColor = Color.Red;
-                }
-            }
-          
             foreach (Usuario item in Local.Nomina)
             {
-                lstb_Nomina.Items.Add(item.Datos());  
+                if (typeof(Empleado) == item.GetType())
+                {
+                    lstb_Nomina.Items.Add(item.Datos());
+                }
             }
 
             btn_BajaEmpleado.ForeColor = Color.Red;
-           
+
             ActualizarNominaLstbx();
         }
 
@@ -49,7 +40,7 @@ namespace PetShopForms
             if (txtb_IdBaja.Text != null && int.TryParse(txtb_IdBaja.Text, out aux))
             {
 
-                foreach (Usuario item in Local.Nomina)
+                foreach (Empleado item in Local.Nomina)
                 {
                     if (typeof(Empleado) == item.GetType())
                     {
@@ -70,7 +61,7 @@ namespace PetShopForms
 
                     }
                 }
-                
+
                 if (indice == -1)
                 {
 
@@ -80,11 +71,8 @@ namespace PetShopForms
                 {
                     Local.Nomina.RemoveAt(indice);
                     txtb_IdBaja.Text = string.Empty;
-
-                    ActualizarNominaLstbx();
                 }
-
-                LimpiarCampos();
+                ActualizarNominaLstbx();
             }
             else
             {
@@ -103,53 +91,64 @@ namespace PetShopForms
                     if (typeof(Empleado) == item.GetType())
                     {
                         lstb_Nomina.Items.Add(item.Datos());
-                        
+
                     }
                 }
-                
+
             }
-            
+
         }
 
         private void FrmEmpleados_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show($"Desea salir?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (MessageBox.Show($"Desea salir?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 e.Cancel = true;
+            }else
+            {
+                
             }
-        }
-
-        public void LimpiarCampos()
-        {
-            /*
-            txb_Usuario.Text = string.Empty;
-            txtb_ApellidoALta.Text = string.Empty;
-            txtb_ApellidoModif.Text = string.Empty;
-            txtb_Contraseña.Text = string.Empty;
-            txb_Usuario.Text = string.Empty;
-            txtb_NombreAlta.Text = string.Empty;
-            txtb_NombreModif.Text = string.Empty;
-            txtb_DniAlta.Text = string.Empty;
-            txtb_DniModif.Text = string.Empty;
-            txtb_IdBaja.Text = string.Empty;
-            txtb_SueldoAlta.Text = string.Empty;
-            txtb_SueldoModif.Text = string.Empty;
-            */
         }
 
         private void btn_AltaEmpleado_Click(object sender, System.EventArgs e)
         {
             controlador = 1;
             abm = new FrmABM(controlador);
-            abm.Show();
+            abm.BackColor = Color.Salmon;
+            if (abm.ShowDialog() == DialogResult.OK)
+            {
+                lstb_Nomina.Items.Add(abm.Empleado.Datos());
+            }
         }
 
         private void btn_ModificarEmpleado_Click(object sender, System.EventArgs e)
         {
-            controlador = 2;
-            abm = new FrmABM(controlador);
-            
-            abm.Show();
+            int indice = 0;
+            if (lstb_Nomina.SelectedItem != null)
+            {
+                controlador = 2;
+                abm = new FrmABM(controlador);
+                abm.BackColor = Color.DarkSalmon;
+                if (abm.ShowDialog() == DialogResult.OK)
+                {
+                    foreach (Usuario item in Local.Nomina)
+                    {
+
+                        if (item.Datos() == lstb_Nomina.SelectedItem.ToString())
+                        {
+                            indice = Local.Nomina.IndexOf(item);
+                        }
+                    }
+                    Local.Nomina.RemoveAt(indice);
+                    Local.Nomina.Insert(indice, abm.Empleado);
+                }        
+                ActualizarNominaLstbx();
+            }
+            else
+            {
+                MessageBox.Show("Error, seleccione el empleado a modificar antes de oprimir el boton");
+            }
+
         }
     }
 

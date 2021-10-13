@@ -55,7 +55,7 @@ namespace PetShopForms
             // 
             this.btn_Empleados.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_Empleados.ForeColor = System.Drawing.Color.Black;
-            this.btn_Empleados.Location = new System.Drawing.Point(-7, 467);
+            this.btn_Empleados.Location = new System.Drawing.Point(3, 467);
             this.btn_Empleados.Name = "btn_Empleados";
             this.btn_Empleados.Size = new System.Drawing.Size(209, 66);
             this.btn_Empleados.TabIndex = 2;
@@ -112,7 +112,7 @@ namespace PetShopForms
             this.lblVentas.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblVentas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblVentas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblVentas.Location = new System.Drawing.Point(600, 404);
+            this.lblVentas.Location = new System.Drawing.Point(585, 404);
             this.lblVentas.Name = "lblVentas";
             this.lblVentas.Size = new System.Drawing.Size(224, 46);
             this.lblVentas.TabIndex = 7;
